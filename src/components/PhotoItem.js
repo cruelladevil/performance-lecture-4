@@ -10,18 +10,13 @@ function PhotoItem({ photo: { urls, alt } }) {
     dispatch(showModal({ src: urls.full, alt }));
   };
 
-  return (
-    <ImageWrap>
-      <Image src={urls.small + '&t=' + new Date().getTime()} alt={alt} onClick={openModal} />
-    </ImageWrap>
-  );
+  return <Image src={urls.small + '&t=' + new Date().getTime()} alt={alt} onClick={openModal} />;
 }
-
-const ImageWrap = styled.div``;
 
 const Image = styled.img`
   cursor: pointer;
   width: 100%;
+  aspect-ratio: 16 / 9;
 `;
 
 export default PhotoItem;
